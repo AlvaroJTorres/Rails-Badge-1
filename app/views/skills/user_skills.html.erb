@@ -1,0 +1,13 @@
+<h1>Add Skill to <%= @user.name %></h1>
+
+<%= form_with url: add_skill_user_path(@user),  method: "post", local: true do |form| %>
+
+  <div class="field">
+    <%= form.label :skill_id %>
+    <%= form.collection_select :skill_id, Skill.all, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
